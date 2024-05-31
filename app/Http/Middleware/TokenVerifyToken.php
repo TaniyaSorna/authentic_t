@@ -19,7 +19,7 @@ class TokenVerifyToken
         $token = $request->cookie('token');
         $verify = JWTToken::verifyToken($token);
         if ($verify === 'unauth') {
-            return redirect('login');
+            return redirect('/login');
         } else {
             $request->headers->set('email', $verify->userEmail);
             $request->headers->set('id', $verify->userId);

@@ -31,9 +31,15 @@ class UserController extends Controller
                 'email' => $email,
                 'password' => $password
             ]);
-            return redirect()->route('login');
+            return response()->json([
+                'status' => 'success',
+                'msag' => 'Created'
+            ]);
         } catch (Exception $e) {
-            return $e->getMessage();
+            return response()->json([
+                'status' => 'error',
+                'msag' => $e->getMessage()
+            ]);
         }
     }
 
@@ -42,7 +48,7 @@ class UserController extends Controller
         try {
             $request->validate([
                 'email' => 'required|email',
-                'password' => 'required|min:3|max:5'
+                'password' => 'required'
             ]);
             // dd('ss');
             $email = $request->email;
@@ -57,11 +63,23 @@ class UserController extends Controller
                     'msag' => 'login successfull',
                 ])->cookie('token', $token, 60 * 60 * 24);
             } else {
-                return 'Email and password does not exist';
+                // return '';
+                return response()->json([
+                    'status' => 'error',
+                    'msg' => 'Email and password does not exist'
+                ]);
             }
         } catch (Exception $e) {
-            return $e->getMessage();
+            return response()->json([
+                'status' => 'error',
+                'msg' => $e->getMessage()
+            ]);
         }
+    }
+
+    public function logout()
+    {
+        return redirect('/login')->cookie('token', null, -1);
     }
 
     public function sendOtp(Request $request)

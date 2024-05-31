@@ -19,11 +19,25 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/toastify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <script src="{{ asset('assets/js/axios.min.js') }}"></script>
+    <script src="{{ asset('assets/js/config.js') }}"></script>
+    <script src="{{ asset('assets/js/toastify-js.js') }}"></script>
 
 </head>
 
 <body id="page-top">
+
     <div id="wrapper">
+
+        <div id="loader" class="LoadingOverlay d-none">
+            <div class="Line-Progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+
         @include('component.dashboard.sidenav')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
@@ -42,6 +56,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
+
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>

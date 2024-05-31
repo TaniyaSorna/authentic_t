@@ -15,11 +15,16 @@ Route::view('/registration', 'pages.auth.registration-page')->name('registration
 Route::view('/send-otp', 'pages.auth.send-otp-page')->name('send-otp');
 Route::view('/verify-otp', 'pages.auth.verify-otp-page')->name('verify-otp');
 Route::view('/reset-pass', 'pages.auth.reset-pass-page')->name('reset-pass');
+Route::view('/profile', 'pages.dashboard.profile-page')->middleware([TokenVerifyToken::class]);
+
 
 
 
 Route::post('/registration', [UserController::class, 'registration']);
 Route::post('/login', [UserController::class, 'login']);
+Route::get('/log-out', [UserController::class, 'logout'])
+    ->middleware(TokenVerifyToken::class)
+    ->name('logout');
 
 
 Route::post('/send-otp', [UserController::class, 'sendOtp']);

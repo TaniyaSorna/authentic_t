@@ -20,9 +20,14 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+
+
     <link rel="stylesheet" href="{{ asset('assets/css/toastify.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
+    {{-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}
     <script src="{{ asset('assets/js/axios.min.js') }}"></script>
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <script src="{{ asset('assets/js/toastify-js.js') }}"></script>
@@ -30,10 +35,19 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
+
+    <div id="loader" class="LoadingOverlay d-none">
+        <div class="Line-Progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
 
 
     @yield('content')
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
@@ -45,7 +59,6 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
 </body>
 
 </html>
