@@ -48,7 +48,7 @@ class UserController extends Controller
         try {
             $request->validate([
                 'email' => 'required|email',
-                'password' => 'required'
+                'password' => 'required|min:3|max:5'
             ]);
             // dd('ss');
             $email = $request->email;

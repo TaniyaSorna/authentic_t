@@ -29,7 +29,6 @@
                             <button onclick="Register()" type="submit" class="btn btn-primary btn-user btn-block">
                                 Register Account
                             </button>
-                            <hr>
                         </div>
                         <hr>
 

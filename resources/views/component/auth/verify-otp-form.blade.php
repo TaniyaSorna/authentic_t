@@ -22,7 +22,7 @@
                                     name="otp" aria-describedby="emailHelp" placeholder="Enter OTP.">
                             </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
-                                Reset Password
+                                Send Otp
                             </button>
                         </form>
 

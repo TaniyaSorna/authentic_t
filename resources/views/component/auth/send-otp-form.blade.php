@@ -24,7 +24,7 @@
                                             placeholder="Enter Email Address...">
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Reset Password
+                                        Forget Password
                                     </button>
                                 </form>
                                 <hr>
